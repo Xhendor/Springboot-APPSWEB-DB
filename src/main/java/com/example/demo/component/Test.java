@@ -14,16 +14,26 @@ import java.util.List;
 @Component
 public class Test implements CommandLineRunner {
 
+    //Injeccion de codigo/dependencias
     @Autowired
     PersonaRepository repo;
 
     @Override
     public void run(String... args) throws Exception {
 
-
-    Persona persona=new Persona("Rosendo","Sosa","Canales",new Date());
+    Persona persona=new Persona(
+            "Rosendo",
+            "Sosa",
+            "Canales",
+            new Date());
 
     repo.save(persona);
+        Persona personaA=new Persona(
+                "Jaimico",
+                "Ramos",
+                "Salazar",
+                new Date());
+    repo.save(personaA);
 
         //Convertir Iterador a Lista
         Iterable<Persona> ite=repo.findAll();
@@ -36,6 +46,9 @@ public class Test implements CommandLineRunner {
         for(Persona p:actualList){
 
             System.err.println("Nombre: "+p.getNombre());
+            System.err.println("Apellido Paterno: "+p.getAppaterno());
+            System.err.println("Apellido Materno: "+p.getApmaterno());
+
         }
     }
 }

@@ -9,7 +9,9 @@
 <p> Hola!!!!  <th:block th:text="${message}">message</th:block></p>
 
 <div th:each="prod: ${lista}">
-    <div th:text="${prod}"></div>
+    <div th:text="${prod.getNombre()}"></div>
+    <div th:text="${prod.getAppaterno()}"></div>
+    <div th:text="${prod.getApmaterno()}"></div>
 </div>
 
 </body>

@@ -2,18 +2,19 @@ package com.example.demo.entity;
 
 import lombok.Data;
 
+//JPA - Java Persistence API
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-
-@Entity
+//JAVA BEAN
+@Entity  //Le decimos que es un representacion de una tabla-procedimeinto almacenado-vista
 @Data
 public class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_persona")
-    private int idPersona;
+    private int idPersona;//id_persona -> id persona > idPersona
     private String nombre;
     private String appaterno;
     private String apmaterno;
